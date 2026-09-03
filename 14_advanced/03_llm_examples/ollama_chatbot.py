@@ -20,7 +20,7 @@ while True:
     messages.append({"role": "user", "content": user_input})
 
     response = client.chat.completions.create(
-        model="qwen3:8b",
+        model="llama3.2:latest",
         messages=messages
     )
 

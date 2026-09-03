@@ -17,9 +17,9 @@ from langchain_core.runnables import RunnablePassthrough
 load_dotenv(override=True)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PDF_PATH = os.path.join(BASE_DIR, "..", "..", "9_general", "rag", "Principles-of-Data-Science.pdf")
+PDF_PATH = os.path.join(BASE_DIR, "..", "..", "9_general", "rag", "ITPolicy.pdf")
 
-# =====================================================================
+# ===================================================================== 
 # STAGE 1: LOADER
 # Reads the raw source and turns it into a list of Document objects
 # (page_content + metadata). Everything downstream only ever depends on
@@ -113,7 +113,7 @@ rag_chain = (
 # Run the full pipeline end to end
 # -----------------------------
 if __name__ == "__main__":
-    question = "What is a p-value and how is it used in hypothesis testing?"
+    question = "How to protect the email account?"
 
     print(f"\nQuestion: {question}")
     print("-" * 70)

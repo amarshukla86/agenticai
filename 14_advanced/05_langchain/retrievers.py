@@ -17,7 +17,7 @@ from langchain.retrievers.document_compressors import LLMChainExtractor
 load_dotenv(override=True)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PDF_PATH = os.path.join(BASE_DIR, "..", "..", "9_general", "rag", "Principles-of-Data-Science.pdf")
+PDF_PATH = os.path.join(BASE_DIR, "..", "..", "9_general", "rag", "ITPolicy.pdf")
 
 # -----------------------------
 # Shared setup: same load -> split -> embed -> index pipeline as
@@ -86,7 +86,7 @@ compression_retriever = ContextualCompressionRetriever(
     base_retriever=vector_retriever,
 )
 
-question = "What is a p-value?"
+question = "What is a Virus Prevention?"
 plain_docs = vector_retriever.invoke(question)
 compressed_docs = compression_retriever.invoke(question)
 

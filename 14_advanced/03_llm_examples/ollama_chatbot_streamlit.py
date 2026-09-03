@@ -29,7 +29,7 @@ if user_input:
         st.write(user_input)
 
     response = client.chat.completions.create(
-        model="qwen3:8b",
+        model="llama3.2:latest",
         messages=st.session_state.messages
     )
     reply = response.choices[0].message.content
