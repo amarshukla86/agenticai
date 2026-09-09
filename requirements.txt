@@ -89,6 +89,7 @@ graphviz==0.21
 flask==3.1.3
 fastapi==0.139.0
 uvicorn==0.50.0
+streamlit==1.63.0  # used by 12_project/12_2_banking_chatbot from step 3 onward
 
 # Google APIs (Sheets/OAuth demos)
 google-api-python-client==2.198.0
