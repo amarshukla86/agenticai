@@ -1,9 +1,12 @@
 # pip install mcp
 import os
 import sqlite3
-from mcp.server.fastmcp import FastMCP
+try:
+    from mcp.server.mcpserver import MCPServer  # mcp 2.x
+except ModuleNotFoundError:
+    from mcp.server.fastmcp import FastMCP as MCPServer  # mcp 1.x
 
-mcp = FastMCP("sqlite-database")
+mcp = MCPServer("sqlite-database")
 
 # Resolve the DB next to this script, regardless of the caller's working directory
 DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "simple_db.sqlite")
@@ -61,6 +64,9 @@ def list_users() -> str:
     )
     return result
 
+# mcp dev / mcp run import this module (name is not __main__), so the table
+# must be created at import time or add_user fails with "no such table: users".
+init_database()
+
 if __name__ == "__main__":
-    init_database()
     mcp.run()

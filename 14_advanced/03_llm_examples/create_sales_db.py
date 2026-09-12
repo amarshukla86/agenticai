@@ -1,6 +1,8 @@
+import os
 import sqlite3
 
-conn = sqlite3.connect(r"C:\code\agenticai\14_advanced\03_llm_examples\sales.db")
+DB_PATH = os.path.join(os.path.dirname(__file__), "sales.db")
+conn = sqlite3.connect(DB_PATH)
 cursor = conn.cursor()
 
 # Drop the table if it already exists
