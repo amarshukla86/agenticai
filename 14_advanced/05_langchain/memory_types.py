@@ -4,6 +4,7 @@ warnings.filterwarnings("ignore", category=PendingDeprecationWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI #Added by Amar
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
@@ -26,7 +27,8 @@ warnings.filterwarnings("ignore", category=LangChainPendingDeprecationWarning)
 
 load_dotenv(override=True)
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)
+# llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 # -----------------------------
 # 1. ConversationBufferMemory
